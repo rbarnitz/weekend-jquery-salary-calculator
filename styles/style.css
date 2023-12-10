@@ -13,3 +13,9 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+
+
+  delete-song {
+    text-align: right;  
+  }

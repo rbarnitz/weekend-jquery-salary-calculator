@@ -14,9 +14,9 @@
     <h2>Add Employee</h2>
     <input type="text" id="first-name" placeholder="First Name"/>
     <input type="text" id="last-name" placeholder="Last Name"/>
-    <input type="number" id="ID" placeholder="ID"/>
-    <input type="text" id="Title" placeholder="Title"/>
-    <input type="number" id="Salary" placeholder="Salary"/>
+    <input type="text" id="id" placeholder="ID"/>
+    <input type="text" id="title" placeholder="Title"/>
+    <input type="text" id="salary" placeholder="Salary"/>
     <br></br>
     <center>
       <button id = "submit" onClick="addEmployee(event)" >Submit</button>
@@ -33,13 +33,15 @@
             <th>Annual Salary</th>  
           </tr>
       </thead>
-      <tbody id="employe-info">
+      <tbody id="employee-info">
         <tr>
-          <td>First Name</td>
-          <td>Last Name</td>
-          <td>Id</td>
-          <td>Title</td>
-          <td>Annual Salary</td> 
+         
+
+          <tbody id="employee-table">
+            <tr>
+              
+            </tr>
+        </tbody>
         </tr>
     </tbody>
 
@@ -51,7 +53,7 @@
       </style>
   </main>
   <footer>
-    <p>Total Monthly</p>
+    <p id = "total-monthly">Total Monthly:</p>
   </footer>
   <script src="scripts/client.js"></script>
 
