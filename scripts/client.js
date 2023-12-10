@@ -6,16 +6,32 @@ let salaryTotal = 0;
 
 function addEmployee(){
     //pulling info from each input field
+    //clearing input and resetting placeholders
+    
     let firstName = document.querySelector('#first-name').value;
-    console.log(firstName);
+    //console.log(firstName);
+    let firstNameClear = document.querySelector('#first-name');
+    firstNameClear.value = '';
+
     let lastName = document.querySelector('#last-name').value;
-    console.log(lastName);
+    //console.log(lastName);
+    let lastNameClear = document.querySelector('#last-name');
+    lastNameClear.value = ''
+
     let id = document.querySelector('#id').value;
-    console.log(id);
+    //console.log(id);
+    let idClear = document.querySelector('#id');
+    idClear.value = ''
+
     let title = document.querySelector('#title').value;
-    console.log(title);
+    //console.log(title);
+    let titleClear = document.querySelector('#title');
+    titleClear.value = ''
+
     let salary = document.querySelector('#salary').value;
-    console.log(salary);
+    //console.log(salary);
+    let salaryClear = document.querySelector('#salary');
+    salaryClear.value = ''
 
         //turn salary into a number variable
         let salaryNum = parseInt(salary);
@@ -32,9 +48,11 @@ function addEmployee(){
     
 
 
-
+    //check to see if salary is too high
     if (salaryNum > monthlySalaryCap){
             console.log('salary too large');
+
+    //add row element with red color
             addRow.innerHTML += `
             <tr bgcolor= "red">
             
@@ -46,10 +64,11 @@ function addEmployee(){
                      <button id="delete-employee" onClick="deleteEmployee(event)">Delete</button>
                      </th>
             </tr>`
+    //return so we don't duplicate entries
             return
         }
     
-        //updating salary count
+     //updating salary count
         salaryTotal += salaryNum;
         console.log('salary Sum',salaryTotal);
     
@@ -57,7 +76,7 @@ function addEmployee(){
     
         salaryDisplay.innerHTML =`Monthly Total: ${salaryTotal}`
     
-
+    //add info if salary is NOT too high
     addRow.innerHTML += `
     <tr>
              <th>${firstName}</th>
@@ -68,23 +87,43 @@ function addEmployee(){
                 <button id="delete-employee" onClick="deleteEmployee(event)">Delete</button>
              </th>
     </tr>`
-    
 
 }
 
+/*
+function clearFields(){
+
+var frm = document.getElementbyId('first-name')[0];
+
+frm.reset();  // Reset all form data
+   return false; // Prevent page refresh
+}
+
+
+    let firstName = document.querySelector('#first-name');
+    console.log(firstName);
+
+    //const firstNameInput = document.getElementById('first_name');
+
+  // Send value to server
+  console.log(firstName.value);
+
+  // 👇️ clear input field
+  firstName.value = '';
+
+
+
+}
+*/
+
 
 function deleteEmployee(event){
+
+    //declare delete location
     let deleteEmp = document.querySelector('#delete-employee').parentElement.parentElement;
+    
+    //remove element
     deleteEmp.remove();
 
 
 }
-
-
-
-
-    // <input type="text" id="first-name" placeholder="First Name"/>
-    // <input type="text" id="last-name" placeholder="Last Name"/>
-    // <input type="number" id="ID" placeholder="ID"/>
-    // <input type="text" id="Title" placeholder="Title"/>
-    // <input type="number" id="Salary" placeholder="Salary"/>
