@@ -7,7 +7,7 @@ let salaryTotal = 0;
 function addEmployee(){
     //pulling info from each input field
     //clearing input and resetting placeholders
-    
+
     let firstName = document.querySelector('#first-name').value;
     //console.log(firstName);
     let firstNameClear = document.querySelector('#first-name');
@@ -36,7 +36,10 @@ function addEmployee(){
         //turn salary into a number variable
         let salaryNum = parseInt(salary);
         console.log('input data', salary);
-    
+
+        //calc monthly salary
+        let monthlySalary = salaryNum/12;
+        console.log(monthlySalary);
     
         //check salary limit
         
@@ -49,7 +52,7 @@ function addEmployee(){
 
 
     //check to see if salary is too high
-    if (salaryNum > monthlySalaryCap){
+    if (monthlySalary > monthlySalaryCap){
             console.log('salary too large');
 
     //add row element with red color

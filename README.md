@@ -1,52 +1,32 @@
-# Project Name
+Description
+Duration: Weekend Project
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+What problem did you solve? How did you solve it?
 
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+The biggest problem (or most time-consuming) was clearing my input fields after hitting submit. I tried several methods that didn't work, but found out I needed to declare new varables for those text fields. I could probably do this better by assigning certain classes to buttons and targeting all of them.
 
 
+To see the fully functional site, please visit: Not implemented at this time!
+
+Screen Shot
+Include one or two screen shots of your project here (optional). Remove if unused.
 
 
-# Weekend Challenge: jQuery Salary Calculator
-Create an application that records employee salaries and adds salaries up to report monthly costs. 
 
-## Topics Covered
-- JavaScript
-- jQuery - Selectors, append, and event handling
+Prerequisites
+Link to software that is required to install the app (e.g. node).
 
-## Assignment
+Installation
+How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
 
-The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
+Usage
+How does someone use this application? Tell a user story here.
 
-A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM. If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+Built With
+Javascript Bootstrap HTML/CSS
 
-Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
+Acknowledgement
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
 
-### Files Provided
-No files have been provided (just instructions.md and a readme.md). Instead of forking and cloning this repo, please choose "Use This Template" (green button) and name your new repo "weekend-jquery-salary-calculator" and clone down from there. Make sure to commit regularily!
-
-### Wireframe
-
-![Wireframe](salary-calc-wireframe.png)
-
-## Stretch Mode
-
-Add styling or extra functionality that fits with the theme of this assignment.
-
-Once the employee is deleted, update the _Total Monthly Cost_ section on the page to reflect the employee's removal. _HINT:_ You will need to figure out which employee was removed, in order to subtract their salary from the total. Consider using `.text()` as a getter, or look into jQuery's `.data()` function. This is tricky! 
-
-## Reminder About Modes
-
-Above, we introduced the concept of levels of difficulty. "Mode" is how we will typically refer to each level. Below is a brief explanation of
-
-* what to expect when attempting each mode
-* if they are required or not
-
-Mode | Description
---- | ---
-Base | required
-Stretch | optional, stretches your understanding and may require additional research
+Support
+If you have suggestions or issues, please let me know!
