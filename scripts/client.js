@@ -30,6 +30,7 @@ function addEmployee(){
 
     let salary = document.querySelector('#salary').value;
     //console.log(salary);
+    
     let salaryClear = document.querySelector('#salary');
     salaryClear.value = ''
 
@@ -55,9 +56,10 @@ function addEmployee(){
     if (monthlySalary > monthlySalaryCap){
             console.log('salary too large');
 
+        
     //add row element with red color
             addRow.innerHTML += `
-            <tr bgcolor= "red">
+            <tr class = "expensive">
             
                      <th>${firstName}</th>
                      <th>${lastName}</th>

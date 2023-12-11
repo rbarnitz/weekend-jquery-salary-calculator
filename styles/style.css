@@ -19,3 +19,8 @@ table {
   delete-song {
     text-align: right;  
   }
+
+
+  .expensive { 
+    background-color: red 
+  }
