@@ -2,7 +2,18 @@ console.log('HELLO WORLD');
 
 
 let salaryTotal = 0;
+let employeeArray = [];
+var globalSalary = 0;
+console.log(globalSalary);
 
+
+document.addEventListener('keypress', function (event) {
+    // Check if the pressed key is the 'Enter' key (key code 13)
+    if (event.key === 'Enter') {
+      // Call your addEmployee function when 'Enter' is pressed
+      addEmployee();
+    }
+  });
 
 function addEmployee(){
     //pulling info from each input field
@@ -33,6 +44,25 @@ function addEmployee(){
     
     let salaryClear = document.querySelector('#salary');
     salaryClear.value = ''
+
+    let employeeArrayEntry = [
+        {
+          First: firstName,
+          Last: lastName,
+          ID: id,
+          Title: title,
+          Salary: salary,
+        },
+            ]
+        console.log(employeeArrayEntry);
+        employeeArray.push(employeeArrayEntry);
+        console.log(employeeArray);
+
+
+
+
+        
+
 
         //turn salary into a number variable
         let salaryNum = parseInt(salary);
@@ -68,6 +98,9 @@ function addEmployee(){
                      <th>$${salary}
                      <button id="delete-employee" onClick="deleteEmployee(event)">Delete</button>
                      </th>
+                     <th></th>
+
+                     
             </tr>`
     //return so we don't duplicate entries
             return
@@ -76,6 +109,8 @@ function addEmployee(){
      //updating salary count
         salaryTotal += salaryNum;
         console.log('salary Sum',salaryTotal);
+
+        globalSalary = salaryTotal;
     
         let salaryDisplay = document.querySelector('#total-monthly');
     
@@ -83,16 +118,17 @@ function addEmployee(){
     
     //add info if salary is NOT too high
     addRow.innerHTML += `
-    <tr>
+    <tr class="${salary}">
              <th>${firstName}</th>
              <th>${lastName}</th>
              <th>${id}</th>
              <th>${title}</th>
-             <th>$${salary}
-                <button id="delete-employee" onClick="deleteEmployee(event)">Delete</button>
+             <th id = "salaryNum" >$${salary} 
+              <button id="delete-employee" onClick="deleteEmployee(event)">Delete</button>
              </th>
     </tr>`
 
+    
 }
 
 /*
@@ -123,12 +159,48 @@ frm.reset();  // Reset all form data
 
 
 function deleteEmployee(event){
+    console.log("event value", event.innerHTML);
+
+    let thisCell = event.target;
+    console.log("this cell: ", thisCell);
+
+
+    let currentRow = thisCell.closest("tr");
+    
+    let value = currentRow.className;
+    
+    let valueNum = parseInt(value);
+    
+    console.log('class name is:', valueNum);
+
+    let rowValue = thisCell.value;
+    console.log('deleted value',rowValue);
+    
+    console.log("current Row: ", currentRow);
+
+    currentRow.remove();
+
+    console.log('global salary is: ',globalSalary);
+    globalSalary = globalSalary - valueNum;
+    console.log('new global salary is: ',globalSalary);
+
+
+
+    let salaryDisplay = document.querySelector('#total-monthly');
+    
+    salaryDisplay.innerHTML =`Monthly Total: ${globalSalary}`
+
+    
+    
+    //let value = document.getElementById("salaryNum").className;
+    //console.log(value);
+
 
     //declare delete location
-    let deleteEmp = document.querySelector('#delete-employee').parentElement.parentElement;
+    //let deleteEmp = document.querySelector('#delete-employee').parentElement.parentElement;
     
     //remove element
-    deleteEmp.remove();
-
+    //deleteEmp.remove();
 
 }
+
